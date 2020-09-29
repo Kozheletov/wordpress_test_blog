@@ -8,6 +8,7 @@ add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
+    register_nav_menu('primary', 'Главное меню');
 });
 
 add_action('wp_enqueue_scripts', function () {
@@ -59,3 +60,24 @@ add_action('wp_enqueue_scripts', function () {
         true
     );
 });
+
+// Фильтр для формирования id элементов li меню
+add_filter('nav_menu_item_id', function ($menu_id, $item, $args, $depth) {
+    return '';
+}, 10, 4);
+
+// Фильтр для формирования классов у элементов li меню
+add_filter('nav_menu_css_class', function ($classes, $item, $args, $depth) {
+    if (in_array('current-menu-item', $classes, true)) {
+        $classes = ['nav-item', 'active'];
+    } else {
+        $classes = ['nav-item'];
+    }
+    return $classes;
+}, 10, 4);
+
+// Фильтр для добавления класса ссылкам меню
+add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
+    $atts['class'] = 'nav-link';
+    return $atts;
+}, 10, 4);
