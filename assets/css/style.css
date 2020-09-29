@@ -366,8 +366,8 @@ h6 {
 }
 
 @media (min-width: 768px) {
-   
-    
+
+
 }
 
 @media (max-width: 991.98px) {
@@ -404,7 +404,7 @@ h6 {
 }
 
 @media (max-width: 767.98px) {
-    
+
 }
 
 
@@ -730,4 +730,21 @@ div.comment:first-of-type {
 .comment-reply-title small a:focus,
 .comment-reply-title small a:hover {
 	text-decoration: underline;
+}
+
+.custom-pagination .nav-links {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-pagination .page-numbers {
+    padding: 10px;
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.custom-pagination .page-numbers.current {
+    background-color: var(--indigo);
 }
