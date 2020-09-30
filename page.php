@@ -26,14 +26,16 @@ get_header();
                     'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                 ));
                 ?>
-
+                <h2>Последние посты в блоге</h2>
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <?php foreach ($last_posts_blog as $index => $post_blog): ?>
                             <div class="carousel-item
+
                         <?php if ($index === 0) {
                                 echo 'active';
                             } ?>">
+                                <h3><?php echo $post_blog->post_title; ?></h3>
                                 <a href="<?php echo get_permalink($post_blog->ID); ?>">
                                     <img
                                             src="<?php echo get_the_post_thumbnail_url($post_blog); ?>"
@@ -56,20 +58,6 @@ get_header();
                     </a>
                 </div>
 
-
-                <section class="theme-bg-dark py-5 mt-4 text-center">
-                    <h3 class='text-light d-block'>Подписаться на новости</h3>
-
-                    <form class="signup-form form-inline justify-content-center pt-3">
-                        <div class="form-group">
-                            <label class="sr-only" for="semail">Ваш email</label>
-                            <input type="email" id="semail" name="semail1"
-                                   class="form-control mr-md-1 semail" placeholder="Enter email">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Подписаться</button>
-                    </form>
-
-                </section>
                 <div class="row row-cols-1 mt-4 row-cols-md-2">
                     <div class="col mb-4">
                         <div class="card">
