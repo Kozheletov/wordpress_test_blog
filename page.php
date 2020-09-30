@@ -38,7 +38,7 @@ get_header();
                                     <img
                                             src="<?php echo get_the_post_thumbnail_url($post_blog); ?>"
                                             class="d-block w-100"
-                                            alt="1">
+                                            alt="image">
                                 </a>
                             </div>
 

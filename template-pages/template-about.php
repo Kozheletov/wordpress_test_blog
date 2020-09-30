@@ -11,7 +11,6 @@ get_header();
         <h1 class="heading"><?php single_post_title(); ?></h1>
     </header>
 
-
     <article class="about-section content px-3 py-5 p-md-5">
         <div class="container">
             <figure><img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
